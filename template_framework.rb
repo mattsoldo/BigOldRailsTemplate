@@ -6,7 +6,7 @@ module Rails
 
 # Logging
     # Turn on for noisy logging during template generation
-    DEBUG_LOGGING = false
+    DEBUG_LOGGING = true
 
     def debug_log(msg)
       if DEBUG_LOGGING
@@ -40,6 +40,7 @@ module Rails
     # TODO: List of attributes should be data driven
     def init_template_framework(template, root)
       @template_paths = [File.expand_path(File.dirname(template), File.join(root,'..'))]
+      @template_paths << File.join(File.expand_path(File.dirname(template), File.join(root,'..')), '../..')
       @template_identifier = 'default'
     end
 
