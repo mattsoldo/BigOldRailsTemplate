@@ -33,7 +33,7 @@ class User < ActiveRecord::Base
   end
      
   def add_role(role)
-    self.roles << role
+    self.roles << role unless self.has_role?(role)
   end
      
   def remove_role(role)

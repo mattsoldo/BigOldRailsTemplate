@@ -111,6 +111,13 @@ class UserTest < ActiveSupport::TestCase
         @user = User.generate
         @user.add_role("wombat")
         assert @user.roles.include?("wombat")
+      end    
+      
+      should "not add duplicate roles" do
+        @user = User.generate
+        @user.add_role("wombat")
+        @user.add_role("wombat")
+        assert_equal ["wombat"], @user.roles
       end
     end
   
