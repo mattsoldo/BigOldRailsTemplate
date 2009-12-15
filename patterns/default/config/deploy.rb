@@ -26,7 +26,10 @@ after "deploy:update", "deploy:cleanup"
 # def link(link)
 #   source, target = link.keys.first, link.values.first
 #   run "ln -nfs \#{target} \#{source}"
-# end
+# end    
+#
+# Activate post-deploy re-linking
+# after 'deploy:symlink', 'deploy:link_config'
   
 namespace :deploy do
   desc "Make sure there is something to deploy"
@@ -42,3 +45,19 @@ namespace :deploy do
     end
   end
 end    
+
+# If you want to automatically run populations on every deploy
+# after 'deploy:symlink' 'db:populate'  
+# Or you may want to update migrations and run populations
+# after 'deploy:symlink' 'db:migrate_and_populate'  
+
+# If you use whenever to manage cron jobs inside of your Rails app
+# namespace :cron do
+#   desc "Update the current crontab with the configuration in config/schedule.rb"
+#   task :update, :roles => :db, :only => { :primary => true } do
+#     rails_env = fetch(:rails_env, "production")
+#     run "cd #{release_path} && whenever --update-crontab --set environment=#{rails_env} -i #{application}"
+#   end
+# end
+# after "deploy:symlink", "cron:update"
+
