@@ -32,6 +32,13 @@ class User < ActiveRecord::Base
     roles.include?(role)
   end
      
+  def has_any_role?(*roles)
+    roles.each do |role|
+      return true if has_role?(role)
+    end
+    false
+  end
+
   def add_role(role)
     self.roles << role unless self.has_role?(role)
   end
@@ -44,6 +51,17 @@ class User < ActiveRecord::Base
     self.roles = []
   end
   
+  def has_permission?(action)
+    case action.to_sym
+    when :view_admin_data
+      admin?
+    when :edit_admin_data
+      admin?
+    else
+      false
+    end
+  end
+
   def kaboom!
     r = RegExp.new("foo")
   end

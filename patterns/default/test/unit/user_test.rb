@@ -106,6 +106,32 @@ class UserTest < ActiveSupport::TestCase
       end
     end
 
+    context "#has_any_role?" do
+      setup do
+        @user = User.generate
+      end
+      
+      should "return true if the user has the first specified role" do
+        @user.add_role("saint")
+        assert @user.has_any_role?("saint", "sinner")
+      end
+      
+      should "return true if the user has any other role in the array" do
+        @user.add_role("sinner")
+        assert @user.has_any_role?("saint", "sinner")
+      end
+      
+      should "return false if the user does not have any of the specified roles" do
+        @user.clear_roles
+        assert !@user.has_any_role?("saint", "sinner")
+      end
+
+      should "return false if the user has only roles not in the list" do
+        @user.add_role("president")
+        assert !@user.has_any_role?("saint", "sinner")
+      end
+    end
+      
     context "#add_role" do
       should "add the specified role" do
         @user = User.generate
@@ -141,6 +167,34 @@ class UserTest < ActiveSupport::TestCase
       end
     end
   
+    context "#has_permission?" do          
+      setup do
+        @regular_user = User.generate
+        @admin_user = User.generate
+        @admin_user.add_role("admin")
+      end
+        
+      context ":view_admin_data" do
+        should "be true for an admin user" do
+          assert @admin_user.has_permission?(:view_admin_data)
+        end
+        
+        should "be false for a regular user" do
+          assert !@regular_user.has_permission?(:view_admin_data)
+        end
+      end
+      
+      context ":edit_admin_data" do
+        should "be true for an admin user" do
+          assert @admin_user.has_permission?(:edit_admin_data) 
+        end
+        
+        should "be false for a regular user" do
+          assert !@regular_user.has_permission?(:edit_admin_data) 
+        end
+      end
+    end
+    
     context "#kaboom!" do
       should "blow up predictably" do
         assert_raise NameError do
