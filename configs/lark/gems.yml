@@ -6,24 +6,20 @@ will_paginate:
   :options:
     :version: ~> 2.2
     :lib: will_paginate
-    :source: http://gemcutter.org
-jscruggs-metric_fu:
+metric_fu:
   :options:
     :version: ~> 1.1
     :lib: metric_fu
-    :source: http://gems.github.com 
 searchlogic:
   :options:
     :lib: searchlogic
-    :source: http://gemcutter.org
-    :version: ~> 2.0
+    :version: ~> 2.3
 matthuhiggins-foreigner:
   :options:
     :lib: foreigner
-    :source: http://gems.github.com
 formtastic:
-  :options:
-    :source: http://gemcutter.org
+  :options: 
+    :version: ~> 0.9
 haml:
   :options:
     :version: ~> 2.2
@@ -31,29 +27,24 @@ haml:
 compass:
   :options:
     :lib: compass
-    :source: http://gemcutter.org
   :if: design == "compass"
 compass-960-plugin:
   :options:
     :lib: ninesixty
-    :source: http://gemcutter.org
   :if: "design == 'compass' && compass_css_framework =~ /960/"
 inherited_resources:
   :options:
     :lib: inherited_resources
-    :source: http://gemcutter.org
     :version: >= 0.9.0
   :if: controller_type == "inherited_resources"
 erubis:
   :options:
-    :source: http://gemcutter.org
     :version: >= 2.6.5
 
 # development only
 inaction_mailer: 
   :options:
     :lib: inaction_mailer/force_load
-    :source: http://gemcutter.org
     :env: development
 ffmike-query_trace:
   :options:
@@ -62,19 +53,16 @@ ffmike-query_trace:
     :env: development
 bullet:
   :options:
-    :source: http://gemcutter.org
     :env: development
 annotate:
   :options:
     :lib: annotate
-    :source: http://gemcutter.org
     :env: development
 
 # test only
 shoulda:
   :options:
     :lib: shoulda
-    :source: http://gemcutter.org
     :env: test
 ffmike-test_benchmark:
   :options:
