@@ -1,4 +1,8 @@
-ADMIN_DATA_VIEW_AUTHORIZATION = Proc.new { |controller| controller.send("admin_logged_in?") }
-ADMIN_DATA_UPDATE_AUTHORIZATION = Proc.new { |controller| return false }
+# NOTE: Regardless of these settings, admin_data is always usable in development (localhost:3000/admin_data)
+AdminDataConfig.set = {
+  :is_allowed_to_view => lambda {|controller| controller.send('view_admin_data?') },
+  :is_allowed_to_update => lambda {|controller| controller.send('edit_admin_data?') },
+  :is_allowed_to_view_feed => lambda {|controller| controller.send('view_admin_data?') }
+}
 
 #{admin_data_xss_block}

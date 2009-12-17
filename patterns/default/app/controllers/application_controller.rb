@@ -30,6 +30,14 @@ class ApplicationController < ActionController::Base
     logged_in? && current_user.admin?
   end
 
+  def view_admin_data?
+    logged_in? && current_user.has_permission?(:view_admin_data)
+  end
+
+  def edit_admin_data?
+    logged_in? && current_user.has_permission?(:edit_admin_data) && !Rails.env.production?
+  end
+
 private
   def current_user_session
     return @current_user_session if defined?(@current_user_session)
