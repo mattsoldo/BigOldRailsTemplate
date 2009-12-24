@@ -111,6 +111,13 @@ if design != "compass" && template_engine == "haml"
   run "haml --rails ."
 end
 
+# Blackbird js debugging tool
+file 'public/blackbird/blackbird.css', load_pattern('public/blackbird/blackbird.css')
+file 'public/blackbird/blackbird.js', load_pattern('public/blackbird/blackbird.js')
+file 'public/blackbird/blackbird_icons.png', load_pattern('public/blackbird/blackbird_icons.png')
+file 'public/blackbird/blackbird_panel.png', load_pattern('public/blackbird/blackbird_panel.png')
+file 'public/blackbird/readme.txt', load_pattern('public/blackbird/readme.txt')
+
 flash_class =  load_snippet('flash_class', design)
 
 file 'app/views/layouts/_flashes.html.erb', load_pattern('app/views/layouts/_flashes.html.erb', 'default', binding)

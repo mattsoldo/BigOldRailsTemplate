@@ -6,7 +6,11 @@
     <title><%= h(yield(:title) || controller.action_name) %></title>
     #{extra_stylesheet_tags}
     <%= stylesheet_link_tag 'formtastic', 'formtastic_changes', 'application', :media => 'all', :cache => true %>
-    #{javascript_include_tags}
+    #{javascript_include_tags}   
+    <% if Rails.env.development? %>
+      <%= javascript_include_tag "/blackbird/blackbird.js" %>
+      <%= stylesheet_link_tag "/blackbird/blackbird.css" %>
+    <% end %>
     <%= yield :head %>
   </head>
   <body>
