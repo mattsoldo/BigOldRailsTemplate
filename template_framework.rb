@@ -27,7 +27,7 @@ module Rails
      :ie6_blocking, :javascript_library, :template_engine, :compass_css_framework, :design, :require_activation,
      :mocking, :smtp_address, :smtp_domain, :smtp_username, :smtp_password, :capistrano_user, :capistrano_repo_host, :capistrano_production_host,
      :capistrano_staging_host, :exceptional_api_key, :hoptoad_api_key, :newrelic_api_key, :notifier_email_from, :default_url_options_host,        
-     :controller_type, :branches, :post_creation, :github_username, :github_token, :github_public
+     :controller_type, :branches, :post_creation, :github_username, :github_token, :github_public, :admin_data_user_id, :admin_data_password
   
     def add_template_path(path, placement = :prepend)
       if placement == :prepend
@@ -111,7 +111,9 @@ module Rails
       @hoptoad_api_key = template_options["hoptoad_api_key"]
       @newrelic_api_key = template_options["newrelic_api_key"]
       @notifier_email_from = template_options["notifier_email_from"]
-      @default_url_options_host = template_options["default_url_options_host"]
+      @default_url_options_host = template_options["default_url_options_host"]    
+      @admin_data_user_id = template_options["admin_data_user_id"]
+      @admin_data_password = template_options["admin_data_password"]
 
       @branches = template_options["git_branches"]
     

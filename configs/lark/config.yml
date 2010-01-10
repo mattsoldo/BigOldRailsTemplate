@@ -82,5 +82,8 @@ hoptoad_api_key: PASTE_YOUR_API_KEY_HERE
 newrelic_api_key: PASTE_YOUR_API_KEY_HERE
 # Return address info for app/models/notifier.rb
 notifier_email_from: Lark Group <noreply@example.com>
-default_url_options_host: example.com
+default_url_options_host: example.com      
+# used to allow access to the RSS feed from admin_data
+admin_data_user_id: my_user
+admin_data_password: my_password
 
