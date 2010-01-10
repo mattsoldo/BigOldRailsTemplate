@@ -39,7 +39,10 @@ inherited_resources:
   :if: controller_type == "inherited_resources"
 erubis:
   :options:
-    :version: >= 2.6.5
+    :version: >= 2.6.5      
+paperclip:
+  :options:
+    :version: >= 2.3
 
 # development only
 inaction_mailer: 

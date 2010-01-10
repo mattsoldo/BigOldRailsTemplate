@@ -14,9 +14,6 @@ hashdown:
 object_daddy: 
   :options: 
     :git: :git://github.com/flogic/object_daddy.git
-paperclip: 
-  :options: 
-    :git: :git://github.com/thoughtbot/paperclip.git
 parallel_specs: 
   :options: 
     :git: :git://github.com/grosser/parallel_specs.git
