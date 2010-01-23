@@ -484,7 +484,8 @@ end
 # databases
 rake('db:create')
 rake('db:migrate')
-rake('parallel:prepare[4]')
+# Would like to do this, but rake doesn't see the task yet
+# rake('parallel:prepare[4]')
 commit_state "databases set up"
 
 # annotations
