@@ -1,7 +1,10 @@
 --- 
 admin_data: 
   :options: 
-    :git: :git://github.com/neerajdotname/admin_data.git
+    :git: :git://github.com/neerajdotname/admin_data.git   
+cap_gun:
+  :options:
+    :git: :git://github.com/relevance/cap_gun.git
 db_populate: 
   :options: 
     :git: :git://github.com/ffmike/db-populate.git
