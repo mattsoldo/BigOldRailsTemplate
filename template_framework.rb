@@ -27,7 +27,8 @@ module Rails
      :ie6_blocking, :javascript_library, :template_engine, :compass_css_framework, :design, :require_activation,
      :mocking, :smtp_address, :smtp_domain, :smtp_username, :smtp_password, :capistrano_user, :capistrano_repo_host, :capistrano_production_host,
      :capistrano_staging_host, :exceptional_api_key, :hoptoad_api_key, :newrelic_api_key, :notifier_email_from, :default_url_options_host,        
-     :controller_type, :branches, :post_creation, :github_username, :github_token, :github_public, :admin_data_user_id, :admin_data_password
+     :controller_type, :branches, :post_creation, :github_username, :github_token, :github_public, :admin_data_user_id, :admin_data_password,
+     :mail_in_development
   
     def add_template_path(path, placement = :prepend)
       if placement == :prepend
@@ -95,6 +96,9 @@ module Rails
 
       @controller_type = template_options["controller_type"].nil? ? ask("Which controller strategy? rails (default), inherited_resources").downcase : template_options["controller_type"]
       @controller_type = "default" if @controller_type.nil? || @controller_type == 'rails'
+
+      @mail_in_development = template_options["mail_in_development"].nil? ? ask("Which development mail trap? inaction_mailer (default), mock_smtp").downcase : template_options["mail_in_development"]
+      @mail_in_development = "inaction_mailer" if @mail_in_development.nil?
 
       @github_username = template_options["github_username"]
       @github_token = template_options["github_token"]
@@ -171,8 +175,8 @@ module Rails
     end
 
     # Load a snippet from a file
-    def load_snippet(snippet_name, snippet_group = "default")
-      load_from_file_in_template(snippet_name, nil, snippet_group, :snippet)  
+    def load_snippet(snippet_name, snippet_group = "default", parent_binding = nil)
+      load_from_file_in_template(snippet_name, parent_binding, snippet_group, :snippet)  
     end
 
     # Load a pattern from a file, potentially with string interpolation

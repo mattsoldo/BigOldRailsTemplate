@@ -48,7 +48,8 @@ paperclip:
 inaction_mailer: 
   :options:
     :lib: inaction_mailer/force_load
-    :env: development
+    :env: development  
+  :if: mail_in_development == "inaction_mailer" 
 ffmike-query_trace:
   :options:
     :lib: query_trace

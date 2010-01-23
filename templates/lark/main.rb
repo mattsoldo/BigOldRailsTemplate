@@ -158,8 +158,13 @@ end
 
 initializer 'admin_data.rb', load_pattern('config/initializers/admin_data.rb', 'default', binding)
 
-base64_user_name = Base64.encode64(smtp_username) unless smtp_username.blank? 
-base64_password = Base64.encode64(smtp_password) unless smtp_username.blank? 
+base64_user_name = Base64.encode64(smtp_username) unless smtp_username.blank?
+base64_password = Base64.encode64(smtp_password) unless smtp_username.blank?
+
+dev_mail_settings = ""
+if @mail_in_development == "mock_smtp"
+  dev_mail_settings = load_snippet('mock_smtp_settings', 'default', binding)
+end
 
 initializer 'mail.rb', load_pattern('config/initializers/mail.rb', 'default', binding)
 initializer 'date_time_formats.rb', load_pattern('config/initializers/date_time_formats.rb')
@@ -386,7 +391,7 @@ password_input_block = load_snippet('password_input_block') unless require_activ
 
 file 'app/views/users/_form.html.erb', load_pattern('app/views/users/_form.html.erb', 'default', binding)
 
-if design == "bluetrip" 
+if design == "bluetrip"
   file 'app/views/users/edit.html.erb', load_pattern('app/views/users/edit.html.erb', 'bluetrip')
 else
   file 'app/views/users/edit.html.erb', load_pattern('app/views/users/edit.html.erb')

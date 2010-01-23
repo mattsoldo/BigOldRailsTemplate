@@ -32,7 +32,9 @@ require_activation: false
 # mocking library to use in tests: rr, mocha (default)
 mocking: mocha
 # controller_type: rails (default), inherited_resources
-controller_type: rails
+controller_type: rails   
+# mail_in_development: inaction_mailer (default), mock_smtp
+mail_in_development: inaction_mailer
 # post-creation options: pick one or more. 
 #   'heroku' to deploy the project to Heroku
 #   'github' to deploy the project to GitHub
@@ -65,7 +67,7 @@ git_branches:
 # them that you're not using set to their default values
 #
 # Mail server connection information for config/initializers/mail.rb
-smtp_address: 72.249.191.186
+smtp_address: 111.111.111.111
 smtp_domain: example.com
 smtp_username: mikeg1@example.com
 smtp_password: password
