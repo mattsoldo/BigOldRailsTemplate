@@ -16,7 +16,7 @@ Two things you should take note of:
 h2. Getting started:
 
 # Clone BigOldRailsTemplate to somewhere on your hard drive (let's say @/templates/BigOldRailsTemplate@ though of course you can put it anywhere).
-# Copy @/templates/BigOldRailsTemplate/configs/lark/config.yml@ to @~/.big_old_rails_template/configs/lark/config.yml@ - this gives you a copy of the config file that will override the defaults and not get replaced if you update the template. 
+# Copy @/templates/BigOldRailsTemplate/configs/lark/config.yml@ to @~/.big_old_rails_template/configs/lark/config.yml@ - this gives you a copy of the config file that will override the defaults and not get replaced if you update the template.
 # Edit the file you just copied to control the behavior of the template; it's pretty well commented.
 # @rails NewProjectName -m /rails/BigOldRailsTemplate/lark_template.rb@ will then use your installed copy of Rails to create NewProjectName based on the template.
 
@@ -45,14 +45,14 @@ h3. Rails
 * Optionally uses "Bluetrip":http://bluetrip.org/ CSS or "Compass":http://compass-style.org/ for design.
 * Choice of prototype or jQuery. Loading jQuery will include jRails for backwards compatibility.
 * Uses Erubis and the "rails_xss":http://github.com/NZKoz/rails_xss plugin to provide safe HTML
-    
+
 h3. SCM
 
 * git repo
 * master, staging, and development branches (you can adjust this in config.yml)
-* Rails and plugins installed with "Piston":http://piston.rubyforge.org/ by default - you can change this to use "Braid":http://github.com/evilchelu/braid/tree/master, git submodules, or just straight code in config.yml. 
+* Rails and plugins installed with "Piston":http://piston.rubyforge.org/ by default - you can change this to use "Braid":http://github.com/evilchelu/braid/tree/master, git submodules, or just straight code in config.yml.
 * Vendored Rails. You can also choose to depend on gem rails, or to symlink to a local copy of Rails, instead of vendoring it to the project.
-  
+
 h3. Coding Tools
 
 * "Authlogic":http://github.com/binarylogic/authlogic/tree/master for user authentication, including password resets, @anonymous_only@, @authenticated_only@, and @admin_only@ application helpers. Optionally installs user activation support.
@@ -73,12 +73,14 @@ h3. Database Tools
 * "admin-data":http://github.com/neerajdotname/admin_data/tree/master plugin for administrative UI. http://localhost:3000/admin_data will get you to the application’s data. On production, only admin can view data, no one can edit (modify config/initializers/admin_data.rb to adjust this)
 * "db-populate":http://github.com/ffmike/db-populate/tree/master for seed data
 * "Bullet":http://github.com/flyerhzm/bullet in development mode to help find N+1 queries (enable in config/environments/development.rb)
+* If you're using PostgreSQL, rake db:reset_sequences will fix any table autonumbers that are out of whack due to bulk data loading.
 
 h3. Deployment Tools
 
 * "fast_remote_cache":http://github.com/37signals/fast_remote_cache/tree/master strategy for deployment
 * "rubiadhstrano":http://github.com/rubaidh/rubaidhstrano/tree/master for deployment recipes; automatically uses multiple targets, so: cap production deploy for deployment to production
 * "superdeploy":http://github.com/saizai/superdeploy/tree/master for additional Capistrano tasks. cap -T for full list.
+* "cap_gun":http://github.com/relevance/cap_gun to send emails on deployment.
 
 h3. External Services
 
@@ -96,7 +98,7 @@ h3. Testing Tools
 * "shmacros":http://github.com/brynary/rack-bug/tree/master for additional Shoulda macros: @should_accept_nested_attributes_for@, @should_act_as_taggable_on@, @should_callback@, @should_delegate@, more
 * More extra shoulda macros: @should_have_before_filter@, @should_have_after_filter@, @should_protect_from_forgery@, @should_have_helper_method@
 * "metric-fu":http://metric-fu.rubyforge.org/ for static code analysis. rake metrics:all, configure in Rakefile
-* "inaction-mailer":http://github.com/cwninja/inaction_mailer/tree/master is installed for development environment, so mails sent during dev will end up as files in /tmp/sent_mails. @rake mail:clear@ will clean out this directory.
+* "inaction-mailer":http://github.com/cwninja/inaction_mailer/tree/master is installed for development environment, so mails sent during dev will end up as files in /tmp/sent_mails. @rake mail:clear@ will clean out this directory. Alternatively, you can configure the template to use "MockSMTP":http://mocksmtpapp.com/ in development mode.
 * "test-unit 2.0":http://test-unit.rubyforge.org/test-unit/ for nicer output.
 
 h3. Miscellaneous
@@ -114,7 +116,7 @@ By adding keys to the @post_creation@ section in @config.yml@ you can perform so
 h2. Contributing
 
 I welcome suggestions and contributions. See the "project's wiki":http://wiki.github.com/ffmike/BigOldRailsTemplate to contribute to the wishlist, or fork the project on GitHub and submit a pull request when you've got something to add.
-    
+
 Thanks to:
 
 * Darcy Laycock (download, commit_state, from_repo methods in framework)
