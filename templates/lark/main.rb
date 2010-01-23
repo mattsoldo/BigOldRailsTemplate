@@ -130,7 +130,9 @@ footer_class = load_snippet('footer_class', design)
 file 'app/views/layouts/application.html.erb', load_pattern('app/views/layouts/application.html.erb', 'default', binding)
 
 # rakefile for use with inaction_mailer
-rakefile 'mail.rake', load_pattern('lib/tasks/mail.rake')
+if mail_in_development == "inaction_mailer"
+  rakefile 'mail.rake', load_pattern('lib/tasks/mail.rake')
+end
 # rakefile for use with annotate
 rakefile 'annotate.rake', load_pattern('lib/tasks/annotate.rake')
 # rakefile for use with postgresql
