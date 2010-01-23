@@ -3,10 +3,10 @@ h1. Big Old Rails Template
 This template assists in spinning up new Rails applications quickly using Rails 2.3. To use it, just specify the -m switch when creating a Rails application:
 
 <pre><code>
-rails new_app_name -m lark_template.rb
+rails new_app_name -m main.rb
 </code></pre>
 
-bq. This template has not been tested with the new architecture of the Rails 3.0 master branch. That is, it can _create_ Rails 3 applications, but it may not _run_ under Rails 3.
+bq. This template has not been tested with the new architecture of the Rails 3.0 master branch. It's not going to run with Rails 3 without substantial work.
 
 Two things you should take note of:
 
@@ -18,7 +18,7 @@ h2. Getting started:
 # Clone BigOldRailsTemplate to somewhere on your hard drive (let's say @/templates/BigOldRailsTemplate@ though of course you can put it anywhere).
 # Copy @/templates/BigOldRailsTemplate/configs/lark/config.yml@ to @~/.big_old_rails_template/configs/lark/config.yml@ - this gives you a copy of the config file that will override the defaults and not get replaced if you update the template.
 # Edit the file you just copied to control the behavior of the template; it's pretty well commented.
-# @rails NewProjectName -m /rails/BigOldRailsTemplate/lark_template.rb@ will then use your installed copy of Rails to create NewProjectName based on the template.
+# @rails NewProjectName -m /rails/BigOldRailsTemplate/templates/lark/main.rb@ will then use your installed copy of Rails to create NewProjectName based on the template.
 
 h2. Configuration
 
