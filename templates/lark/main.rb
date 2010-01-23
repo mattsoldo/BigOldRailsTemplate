@@ -133,6 +133,10 @@ file 'app/views/layouts/application.html.erb', load_pattern('app/views/layouts/a
 rakefile 'mail.rake', load_pattern('lib/tasks/mail.rake')
 # rakefile for use with annotate
 rakefile 'annotate.rake', load_pattern('lib/tasks/annotate.rake')
+# rakefile for use with postgresql
+if database == "postgresql"
+  rakefile 'postgres.rake', load_pattern('lib/tasks/postgres.rake')
+end
 
 application_styles = load_snippet('application_styles', design)
 
