@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
@@ -6,7 +6,7 @@
     <title><%= h(yield(:title) || controller.action_name) %></title>
     #{extra_stylesheet_tags}
     <%= stylesheet_link_tag 'formtastic', 'formtastic_changes', 'application', :media => 'all', :cache => true %>
-    #{javascript_include_tags}   
+    #{javascript_include_tags}
     <% if Rails.env.development? %>
       <%= javascript_include_tag "/blackbird/blackbird.js" %>
       <%= stylesheet_link_tag "/blackbird/blackbird.css" %>
@@ -15,19 +15,19 @@
   </head>
   <body>
     <div class="container">
-      <%= content_tag :p, Rails.env, :class => Rails.env, :id => "rails-env" unless Rails.env.production? %>
+      <%= content_tag :p, Rails.env, :class => Rails.env, :id => "rails-env" unless Rails.env.production? || ENV["HIDE_ENV_BADGE"] == "true" %>
       <%= yield :top_menu %>
       <%= render :partial => 'layouts/flashes' -%>
-      
+
       <% if show_title? %>
         <h1><%=h yield(:title) %></h1>
       <% end %>
-      
+
       <%= yield %>
 
       <div id="footer" class="#{footer_class}">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      </div>    
+      </div>
     </div>
   </body>
 </html>
