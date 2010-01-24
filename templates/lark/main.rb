@@ -54,12 +54,6 @@ commit_state "Set up staging environment and hooked up Rack::Bug"
 # make sure HAML files get searched if we go that route
 file '.ackrc', load_pattern('.ackrc')
 
-# jrails setup
-if @javascript_library == "jquery"
-  rake("jrails:js:scrub")
-  rake("jrails:js:install")
-end
-
 if design == "bluetrip"
   inside('public') do
     run('mkdir img')
@@ -181,7 +175,7 @@ file 'config/deploy/staging.rb', load_pattern('config/deploy/staging.rb', 'defau
 file 'lib/tasks/gems.rake', load_pattern('lib/tasks/gems.rake')
 
 # asset management bits
-extra_stylesheet_tags = load_snippet('extra_stylesheet_tags', design)    
+extra_stylesheet_tags = load_snippet('extra_stylesheet_tags', design)
 javascript_include_tags = load_snippet('javascript_include_tags', javascript_library)
 file 'config/assets.yml', load_pattern('config/assets.yml', 'default', binding)
 
@@ -195,6 +189,15 @@ file 'public/stylesheets/application.css', load_pattern('public/stylesheets/appl
 generate(:formtastic_stylesheets)
 
 commit_state "stylesheets"
+
+if javascript_library == 'jquery'
+  download('http://code.jquery.com/jquery-1.4.js', 'public/javascripts/jquery-1.4.js')
+  download('http://jqueryui.com/download/jquery-ui-1.7.2.custom.zip', 'public/javascripts/jquery-ui-1.7.2.custom.zip') 
+  # there's got to be an easier way...
+  system('cd public/javascripts/ && unzip jquery-ui-1.7.2.custom.zip development-bundle/ui/jquery-ui-1.7.2.custom.js && mv development-bundle/ui/jquery-ui-1.7.2.custom.js jquery-ui-1.7.2.custom.js && rm jquery-ui-1.7.2.custom.zip && rm -Rf development-bundle && cd ../.. ')
+
+  commit_state "added jQuery"
+end
 
 # error handling
 if exception_handling == "exceptional"
