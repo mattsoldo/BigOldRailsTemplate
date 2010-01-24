@@ -41,7 +41,7 @@ Coding Tools
     acts_as_url, String#to_ascii, String#to_html, String#to_url, String#remove_formatting, String.random
 - US State application helpers
 - will-paginate for pagination
-#{'- jQuery and jQueryUI from Google APIs' if @javascript_library == 'jquery'}
+#{'- jQuery and jQueryUI' if @javascript_library == 'jquery'}
 - Annotate for annotating model, exemplar, and route files
 
 Database Tools
@@ -51,7 +51,8 @@ Database Tools
 - admin-data plugin for administrative UI. http://localhost:3000/admin_data will get you to the application's data. On production,
   only admin can view data, no one can edit (modify config/initializers/admin_data.rb to adjust this)
 - db-populate for seed data
-- bullet to find N+1 queries in development mode (modify config/environments/development.rb to enable)
+- bullet to find N+1 queries in development mode (modify config/environments/development.rb to enable)    
+#{- 'rake db:reset_sequences will fix any table autonumbers that are out of whack due to bulk data loading.' if database == 'postgresql'}  
 
 
 Deployment Tools
@@ -59,7 +60,8 @@ Deployment Tools
 - fast_remote_cache strategy for deployment
 - rubiadhstrano for deployment recipes
     automatically uses multiple targets, so: cap production deploy for deployment to production
-- superdeploy for additional Capistrano tasks. cap -T for full list.
+- superdeploy for additional Capistrano tasks. cap -T for full list.  
+- Jammit for asset packaging
 
    
 External Services
