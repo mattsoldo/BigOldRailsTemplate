@@ -1,68 +1,68 @@
---- 
-admin_data: 
-  :options: 
-    :git: :git://github.com/neerajdotname/admin_data.git   
+---
+admin_data:
+  :options:
+    :git: :git://github.com/neerajdotname/admin_data.git
 cap_gun:
   :options:
     :git: :git://github.com/relevance/cap_gun.git
-db_populate: 
-  :options: 
+db_populate:
+  :options:
     :git: :git://github.com/ffmike/db-populate.git
-fast_remote_cache: 
-  :options: 
+fast_remote_cache:
+  :options:
     :git: :git://github.com/37signals/fast_remote_cache.git
-hashdown: 
-  :options: 
+hashdown:
+  :options:
     :git: :git://github.com/rubysolo/hashdown.git
-object_daddy: 
-  :options: 
+object_daddy:
+  :options:
     :git: :git://github.com/flogic/object_daddy.git
-parallel_specs: 
-  :options: 
+parallel_specs:
+  :options:
     :git: :git://github.com/grosser/parallel_specs.git
-rack-bug: 
-  :options: 
+rack-bug:
+  :options:
     :git: :git://github.com/brynary/rack-bug.git
 rails_xss:
   :options:
     :git: :git://github.com/NZKoz/rails_xss.git
   :if: rails_branch == "2-3-stable"
-rubaidhstrano: 
-  :options: 
-    :git: :git://github.com/rubaidh/rubaidhstrano.git
-shmacros: 
-  :options: 
+rubaidhstrano:
+  :options:
+    :git: :git://github.com/ffmike/rubaidhstrano.git
+shmacros:
+  :options:
     :git: :git://github.com/maxim/shmacros.git
-stringex: 
-  :options: 
+stringex:
+  :options:
     :git: :git://github.com/rsl/stringex.git
-superdeploy: 
-  :options: 
+superdeploy:
+  :options:
     :git: :git://github.com/saizai/superdeploy.git
-time-warp: 
-  :options: 
+time-warp:
+  :options:
     :git: :git://github.com/iridesco/time-warp.git
-validation_reflection: 
-  :options: 
+validation_reflection:
+  :options:
     :git: :git://github.com/redinger/validation_reflection.git
 
 # Optional monitoring
-new_relic: 
-  :options: 
+new_relic:
+  :options:
     :git: :git://github.com/newrelic/rpm.git
   :if: monitoring == "new_relic"
-scout_rails_instrumentation: 
-  :options: 
+scout_rails_instrumentation:
+  :options:
     :git: :git://github.com/highgroove/scout_rails_instrumentation.git
   :if: monitoring == "scout"
 
 # Optional exception handling
-exceptional: 
-  :options: 
+exceptional:
+  :options:
     :git: :git://github.com/contrast/exceptional.git
   :if: exception_handling == "exceptional"
-hoptoad_notifier: 
-  :options: 
+hoptoad_notifier:
+  :options:
     :git: :git://github.com/thoughtbot/hoptoad_notifier.git
   :if: exception_handling == "hoptoad"
 
