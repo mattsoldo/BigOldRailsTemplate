@@ -1,0 +1,19 @@
+package_assets:         on          # (on, off, always)
+embed_images:           datauri     # (on, off, datauri)
+# template_function:      _.template  # (defaults to the built-in micro-templating)
+package_path:           assets      # (defaults to assets)
+javascript_compressor:  yui         # (yui, closure)
+# compressor_options:
+#  compilation_level: ADVANCED_OPTIMIZATIONS
+
+javascripts:
+  common:
+    - public/javascripts/application.js
+#{javascript_include_tags}
+
+stylesheets:
+  common:
+    - public/stylesheets/application.css
+    - public/stylesheets/formtastic.css
+    - public/stylesheets/formtastic_changes.css
+#{extra_stylesheet_tags}

@@ -42,7 +42,10 @@ erubis:
     :version: >= 2.6.5      
 paperclip:
   :options:
-    :version: >= 2.3
+    :version: >= 2.3    
+jammit:
+  :options:
+    :version: >= 0.3
 
 # development only
 inaction_mailer: 

@@ -122,9 +122,6 @@ flash_class =  load_snippet('flash_class', design)
 
 file 'app/views/layouts/_flashes.html.erb', load_pattern('app/views/layouts/_flashes.html.erb', 'default', binding)
 
-javascript_include_tags = load_snippet('javascript_include_tags', @javascript_library)
-
-extra_stylesheet_tags = load_snippet('extra_stylesheet_tags', design)
 footer_class = load_snippet('footer_class', design)
 
 file 'app/views/layouts/application.html.erb', load_pattern('app/views/layouts/application.html.erb', 'default', binding)
@@ -139,12 +136,6 @@ rakefile 'annotate.rake', load_pattern('lib/tasks/annotate.rake')
 if database == "postgresql"
   rakefile 'postgres.rake', load_pattern('lib/tasks/postgres.rake')
 end
-
-application_styles = load_snippet('application_styles', design)
-
-file 'public/stylesheets/application.css', load_pattern('public/stylesheets/application.css', 'default', binding)
-
-generate(:formtastic_stylesheets)
 
 file 'app/controllers/application_controller.rb', load_pattern('app/controllers/application_controller.rb', controller_type)
 file 'app/helpers/application_helper.rb', load_pattern('app/helpers/application_helper.rb')
@@ -189,7 +180,21 @@ file 'config/deploy/staging.rb', load_pattern('config/deploy/staging.rb', 'defau
 # rake tasks to ease Heroku deployment
 file 'lib/tasks/gems.rake', load_pattern('lib/tasks/gems.rake')
 
+# asset management bits
+extra_stylesheet_tags = load_snippet('extra_stylesheet_tags', design)    
+javascript_include_tags = load_snippet('javascript_include_tags', javascript_library)
+file 'config/assets.yml', load_pattern('config/assets.yml', 'default', binding)
+
 commit_state "deployment files"
+
+# stylesheets - has to be done after assets.yml exists otherwise formtastic generator blows up
+application_styles = load_snippet('application_styles', design)
+
+file 'public/stylesheets/application.css', load_pattern('public/stylesheets/application.css', 'default', binding)
+
+generate(:formtastic_stylesheets)
+
+commit_state "stylesheets"
 
 # error handling
 if exception_handling == "exceptional"

@@ -4,9 +4,12 @@
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <title><%= h(yield(:title) || controller.action_name) %></title>
-    #{extra_stylesheet_tags}
-    <%= stylesheet_link_tag 'formtastic', 'formtastic_changes', 'application', :media => 'all', :cache => true %>
-    #{javascript_include_tags}
+    <%= raw include_stylesheets :common, :media => 'all' %>
+    <%= raw include_stylesheets :print, :media => 'print' %>
+    <%= raw include_javascripts :common %>
+    <!--[if IE]>
+      <%= raw include_stylesheets :ie, :media => 'screen, projection' %>
+    <![endif]-->
     <% if Rails.env.development? %>
       <%= javascript_include_tag "/blackbird/blackbird.js" %>
       <%= stylesheet_link_tag "/blackbird/blackbird.css" %>

@@ -9,7 +9,7 @@ set :scm, :git
 
 # Customize the deployment
 set :tag_on_deploy, false # turn off deployment tagging, we have our own tagging strategy
-
+set :compress_assets, false # turn off rubaidhstrano compression so we can use jammit instead
 set :keep_releases, 6
 
 set :cap_gun_action_mailer_config, {
@@ -81,4 +81,15 @@ end
 #   end
 # end
 # after "deploy:symlink", "cron:update"
-
+ 
+namespace :deploy do
+  desc 'Bundle and minify the JS and CSS files'
+  task :precache_assets, :roles => :app do
+    root_path = File.expand_path(File.dirname(__FILE__) + '/..')
+    assets_path = "\#{root_path}/public/assets"
+    gem_path = ENV['GEM_PATH']
+    run_locally "\#{gem_path}/bin/jammit"
+    top.upload assets_path, "\#{current_release}/public", :via => :scp, :recursive => true
+  end
+end
+after 'deploy:symlink', 'deploy:precache_assets'

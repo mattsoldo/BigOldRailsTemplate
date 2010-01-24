@@ -81,6 +81,7 @@ h3. Deployment Tools
 * "rubiadhstrano":http://github.com/rubaidh/rubaidhstrano/tree/master for deployment recipes; automatically uses multiple targets, so: cap production deploy for deployment to production
 * "superdeploy":http://github.com/saizai/superdeploy/tree/master for additional Capistrano tasks. cap -T for full list.
 * "cap_gun":http://github.com/relevance/cap_gun to send emails on deployment.
+* "jammit":http://documentcloud.github.com/jammit/ for asset packaging.
 
 h3. External Services
 
