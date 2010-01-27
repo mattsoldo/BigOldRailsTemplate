@@ -6,7 +6,8 @@
     <title><%= h(yield(:title) || controller.action_name) %></title>
     <%= raw include_stylesheets :common, :media => 'all' %>
     <%= raw include_stylesheets :print, :media => 'print' %>
-    <%= raw include_javascripts :common %>
+    <%= raw include_javascripts :common %>  
+    #{jquery_lint_tag}
     <!--[if IE]>
       <%= raw include_stylesheets :ie, :media => 'screen, projection' %>
     <![endif]-->

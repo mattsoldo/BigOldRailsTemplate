@@ -94,3 +94,4 @@ Testing Tools
 - time-warp for forcing time in tests (use pretend_now_is)
 - test_benchmark to identify slow tests (in test environment only)
 - query-trace to locate source of queries in the log (development only - turn on via config/initializers/query_trace.rb)
+#{'- jQuery-Lint to keep your jQuery squeaky-clean' if javascript_library == 'jquery'}  

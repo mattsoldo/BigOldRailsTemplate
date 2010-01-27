@@ -100,7 +100,8 @@ h3. Testing Tools
 * More extra shoulda macros: @should_have_before_filter@, @should_have_after_filter@, @should_protect_from_forgery@, @should_have_helper_method@
 * "metric-fu":http://metric-fu.rubyforge.org/ for static code analysis. rake metrics:all, configure in Rakefile
 * "inaction-mailer":http://github.com/cwninja/inaction_mailer/tree/master is installed for development environment, so mails sent during dev will end up as files in /tmp/sent_mails. @rake mail:clear@ will clean out this directory. Alternatively, you can configure the template to use "MockSMTP":http://mocksmtpapp.com/ in development mode.
-* "test-unit 2.0":http://test-unit.rubyforge.org/test-unit/ for nicer output.
+* "test-unit 2.0":http://test-unit.rubyforge.org/test-unit/ for nicer output.      
+* "jQuery-Lint":http://github.com/jamespadolsey/jQuery-Lint to keep your jQuery squeaky clean.
 
 h3. Miscellaneous
 

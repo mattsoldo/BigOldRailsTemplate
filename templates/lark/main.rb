@@ -117,7 +117,11 @@ flash_class =  load_snippet('flash_class', design)
 file 'app/views/layouts/_flashes.html.erb', load_pattern('app/views/layouts/_flashes.html.erb', 'default', binding)
 
 footer_class = load_snippet('footer_class', design)
-
+  
+jquery_lint_tag = ''
+if javascript_library == 'jquery'
+  jquery_lint_tag = load_snippet('jquery_lint_tag', 'jquery')
+end
 file 'app/views/layouts/application.html.erb', load_pattern('app/views/layouts/application.html.erb', 'default', binding)
 
 # rakefile for use with inaction_mailer
@@ -195,7 +199,9 @@ if javascript_library == 'jquery'
   download('http://jqueryui.com/download/jquery-ui-1.7.2.custom.zip', 'public/javascripts/jquery-ui-1.7.2.custom.zip') 
   # there's got to be an easier way...
   system('cd public/javascripts/ && unzip jquery-ui-1.7.2.custom.zip development-bundle/ui/jquery-ui-1.7.2.custom.js && mv development-bundle/ui/jquery-ui-1.7.2.custom.js jquery-ui-1.7.2.custom.js && rm jquery-ui-1.7.2.custom.zip && rm -Rf development-bundle && cd ../.. ')
-
+  
+  file_from_repo "jamespadolsey", "jQuery-Lint", "master", "jquery.lint.js", "public/javascripts/jquery.lint.js"
+  
   commit_state "added jQuery"
 end
 
