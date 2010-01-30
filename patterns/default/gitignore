@@ -11,6 +11,6 @@ public/system/*
 tmp/metric_fu/*
 tmp/sent_mails/*
 .ackrc
-public/assets    
-public/tmp
+public/assets/*
+public/tmp/*
 tmp
