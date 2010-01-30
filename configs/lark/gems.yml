@@ -45,7 +45,10 @@ paperclip:
     :version: >= 2.3    
 jammit:
   :options:
-    :version: >= 0.3
+    :version: >= 0.3  
+:carmen:
+  :options:
+    :version: >= 0.1
 
 # development only
 inaction_mailer: 

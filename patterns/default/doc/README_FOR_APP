@@ -44,6 +44,7 @@ Coding Tools
 #{'- jQuery and jQueryUI' if javascript_library == 'jquery'}  
 #{'  jQuery files are uncompressed, but Jammit will recompress them on deploy. You may want a custom jQueryUI from http://jqueryui.com/download' if javascript_library == 'jquery'}
 - Annotate for annotating model, exemplar, and route files
+- Carmen to handle state and country selects    
 
 Database Tools
 ==============
