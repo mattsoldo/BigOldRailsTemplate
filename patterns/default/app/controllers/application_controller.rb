@@ -67,6 +67,11 @@ private
     end
   end
   
+  [:do_something].each do |permission|
+    define_method :"require_#{permission}_permission" do
+      require_permission(permission)
+    end
+  end
   def store_location
     session[:return_to] = request.request_uri
   end

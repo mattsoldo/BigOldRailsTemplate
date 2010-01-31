@@ -57,6 +57,8 @@ class User < ActiveRecord::Base
       admin?
     when :edit_admin_data
       admin?
+    when :do_something
+      has_any_role?("admin", "manager")
     else
       false
     end
