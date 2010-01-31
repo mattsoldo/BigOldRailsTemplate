@@ -102,7 +102,8 @@ h3. Testing Tools
 * "metric-fu":http://metric-fu.rubyforge.org/ for static code analysis. rake metrics:all, configure in Rakefile
 * "inaction-mailer":http://github.com/cwninja/inaction_mailer/tree/master is installed for development environment, so mails sent during dev will end up as files in /tmp/sent_mails. @rake mail:clear@ will clean out this directory. Alternatively, you can configure the template to use "MockSMTP":http://mocksmtpapp.com/ in development mode.
 * "test-unit 2.0":http://test-unit.rubyforge.org/test-unit/ for nicer output.      
-* "jQuery-Lint":http://github.com/jamespadolsey/jQuery-Lint to keep your jQuery squeaky clean.
+* "jQuery-Lint":http://github.com/jamespadolsey/jQuery-Lint to keep your jQuery squeaky clean. 
+* Methods to easily create Object Daddy collections (see test_helper.rb)
 
 h3. Miscellaneous
 
@@ -122,7 +123,8 @@ I welcome suggestions and contributions. See the "project's wiki":http://wiki.gi
 
 Thanks to:
 
-* Darcy Laycock (download, commit_state, from_repo methods in framework)
+* Darcy Laycock (download, commit_state, from_repo methods in framework)     
+* Casey Dreier (inspiration for factory collection methods)
 * Eric Davis (bug fixes, better architecture for config)
 * Paco Guzman (bug fixes)
 * Jeraimee (MySQL translation of database.yml)
