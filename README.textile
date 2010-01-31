@@ -88,6 +88,7 @@ h3. External Services
 
 * "Exceptional":http://getexceptional.com/ or "Hoptoad":http://www.hoptoadapp.com/ for error tracking. Go to /pages/kaboom to test after finishing setup.
 * "New Relic":http://newrelic.com/ or "Scout":https://scoutapp.com/ for performance tracking, depending on your configuration options.
+* "Health Monitor":http://github.com/blythedunham/health_monitor is installed for use with a service such as Pingdom.
 
 h3. Testing Tools
 

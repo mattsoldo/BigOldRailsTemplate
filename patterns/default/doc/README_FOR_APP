@@ -71,7 +71,7 @@ External Services
 - #{'Exceptional' if exception_handling == 'exceptional'}#{'Hoptoad' if exception_handling == 'hoptoad'} for error tracking. Go to /pages/kaboom to test after finishing #{'Exceptional' if exception_handling == 'exceptional'}#{'Hoptoad' if exception_handling == 'hoptoad'} setup.
 #{'- New Relic for performance tracking' if monitoring == 'new_relic'}
 #{'- Scout for performance tracking' if monitoring == 'scout'}
-
+- Health Monitor (http://github.com/blythedunham/health_monitor) is installed for use with a service such as Pingdom
 
 Testing Tools
 =============

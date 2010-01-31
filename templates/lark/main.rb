@@ -219,6 +219,9 @@ if monitoring == "scout"
   file 'config/scout.yml', load_pattern('config/scout.yml', 'default', binding)
 end
 
+# local monitoring
+generate(:health_monitor)
+
 # database
 file 'config/database.yml', load_pattern("config/database.#{database}.yml", 'default', binding)
 file 'db/populate/01_sample_seed.rb', load_pattern('db/populate/01_sample_seed.rb')

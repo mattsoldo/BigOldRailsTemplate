@@ -48,7 +48,10 @@ jammit:
     :version: >= 0.3  
 :carmen:
   :options:
-    :version: >= 0.1
+    :version: >= 0.1     
+:health_monitor:
+  :options:     
+    :version: >= 0.1.4
 
 # development only
 inaction_mailer: 

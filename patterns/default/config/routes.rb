@@ -10,5 +10,6 @@ ActionController::Routing::Routes.draw do |map|
   map.root :controller => "pages", :action => "home"
   map.pages 'pages/:action', :controller => "pages"   
   
+  map.resource :health_monitor, :controller => "health_monitor", :only => :show, :member => { :monitor_health => :get } 
   Jammit::Routes.draw(map)
 end
