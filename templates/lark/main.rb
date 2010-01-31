@@ -501,8 +501,9 @@ if design == "compass"
 end
 
 # databases
-rake('db:create')
-rake('db:migrate')
+rake('db:create:all')
+rake('db:migrate')   
+rake('db:schema:load', :env => 'test')
 # Would like to do this, but rake doesn't see the task yet
 # rake('parallel:prepare[4]')
 commit_state "databases set up"
