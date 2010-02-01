@@ -104,7 +104,8 @@ h3. Testing Tools
 * "inaction-mailer":http://github.com/cwninja/inaction_mailer/tree/master is installed for development environment, so mails sent during dev will end up as files in /tmp/sent_mails. @rake mail:clear@ will clean out this directory. Alternatively, you can configure the template to use "MockSMTP":http://mocksmtpapp.com/ in development mode.
 * "test-unit 2.0":http://test-unit.rubyforge.org/test-unit/ for nicer output.      
 * "jQuery-Lint":http://github.com/jamespadolsey/jQuery-Lint to keep your jQuery squeaky clean. 
-* Methods to easily create Object Daddy collections (see test_helper.rb)
+* Methods to easily create Object Daddy collections (see test_helper.rb)   
+* "rcov_plugin":http://github.com/commondream/rcov_plugin/ to easily run tests with rcov.
 
 h3. Miscellaneous
 

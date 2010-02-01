@@ -27,6 +27,9 @@ rails_xss:
   :options:
     :git: :git://github.com/NZKoz/rails_xss.git
   :if: rails_branch == "2-3-stable"
+rcov_plugin:
+  :options:
+    :git: git://github.com/commondream/rcov_plugin.git
 rubaidhstrano:
   :options:
     :git: :git://github.com/ffmike/rubaidhstrano.git

@@ -13,4 +13,5 @@ tmp/sent_mails/*
 .ackrc
 public/assets/*
 public/tmp/*
-tmp
+tmp    
+test/coverage/*
