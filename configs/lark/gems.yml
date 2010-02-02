@@ -6,10 +6,6 @@ will_paginate:
   :options:
     :version: ~> 2.2
     :lib: will_paginate
-metric_fu:
-  :options:
-    :version: ~> 1.1
-    :lib: metric_fu
 searchlogic:
   :options:
     :lib: searchlogic
@@ -74,6 +70,11 @@ annotate:
 rcov:
   :options:
     :env: development
+metric_fu:
+  :options:
+    :version: >= 1.3
+    :lib: metric_fu
+    :env: development
 
 # test only
 shoulda:
@@ -101,3 +102,9 @@ mocha:
 rcov:
   :options:
     :env: test
+metric_fu:
+  :options:
+    :version: >= 1.3
+    :lib: metric_fu
+    :env: test
+
