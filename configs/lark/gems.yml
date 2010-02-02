@@ -1,6 +1,6 @@
---- 
-authlogic: 
-  :options: 
+---
+authlogic:
+  :options:
     :version: ~> 2.0
 will_paginate:
   :options:
@@ -18,7 +18,7 @@ matthuhiggins-foreigner:
   :options:
     :lib: foreigner
 formtastic:
-  :options: 
+  :options:
     :version: ~> 0.9
 haml:
   :options:
@@ -39,26 +39,26 @@ inherited_resources:
   :if: controller_type == "inherited_resources"
 erubis:
   :options:
-    :version: >= 2.6.5      
+    :version: >= 2.6.5
 paperclip:
   :options:
-    :version: >= 2.3    
+    :version: >= 2.3
 jammit:
   :options:
-    :version: >= 0.3  
+    :version: >= 0.3
 :carmen:
   :options:
-    :version: >= 0.1     
+    :version: >= 0.1
 :health_monitor:
-  :options:     
+  :options:
     :version: >= 0.1.4
 
 # development only
-inaction_mailer: 
+inaction_mailer:
   :options:
     :lib: inaction_mailer/force_load
-    :env: development  
-  :if: mail_in_development == "inaction_mailer" 
+    :env: development
+  :if: mail_in_development == "inaction_mailer"
 ffmike-query_trace:
   :options:
     :lib: query_trace
@@ -70,8 +70,8 @@ bullet:
 annotate:
   :options:
     :lib: annotate
-    :env: development  
-relevance-rcov:
+    :env: development
+rcov:
   :options:
     :env: development
 
@@ -97,7 +97,7 @@ mocha:
   :options:
     :version: ">=0.9.7"
     :env: test
-  :if: @mocking == "mocha"    
-relevance-rcov:
+  :if: @mocking == "mocha"
+rcov:
   :options:
     :env: test
