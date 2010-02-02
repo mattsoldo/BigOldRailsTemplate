@@ -134,6 +134,10 @@ rakefile 'annotate.rake', load_pattern('lib/tasks/annotate.rake')
 if database == "postgresql"
   rakefile 'postgres.rake', load_pattern('lib/tasks/postgres.rake')
 end
+# rakefile for use with hoptoad
+if exception_handling == "hoptoad"
+  rakefile 'hoptoad.rake', load_pattern('lib/tasks/hoptoad.rake')
+end
 
 file 'app/controllers/application_controller.rb', load_pattern('app/controllers/application_controller.rb', controller_type)
 file 'app/helpers/application_helper.rb', load_pattern('app/helpers/application_helper.rb')

@@ -64,7 +64,3 @@ exceptional:
   :options:
     :git: :git://github.com/contrast/exceptional.git
   :if: exception_handling == "exceptional"
-hoptoad_notifier:
-  :options:
-    :git: :git://github.com/thoughtbot/hoptoad_notifier.git
-  :if: exception_handling == "hoptoad"
