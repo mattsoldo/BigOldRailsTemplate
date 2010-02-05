@@ -55,7 +55,7 @@ Database Tools
 - db-populate for seed data
 - bullet to find N+1 queries in development mode (modify config/environments/development.rb to enable)
 #{- 'rake db:reset_sequences will fix any table autonumbers that are out of whack due to bulk data loading.' if database == 'postgresql'}
-
+- script/migrator to quickly move the database to a specific migration
 
 Deployment Tools
 ================

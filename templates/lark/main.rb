@@ -36,6 +36,14 @@ end
 install_gems
 commit_state "Added plugins and gems"
 
+# scripts
+file "script/migrator", load_pattern("script/migrator")
+in_root do
+  run 'chmod +x script/migrator'
+end
+         
+commit_state "added script files"
+
 # environment updates
 in_root do
   run 'cp config/environments/production.rb config/environments/staging.rb'
