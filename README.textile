@@ -76,6 +76,7 @@ h3. Database Tools
 * "Bullet":http://github.com/flyerhzm/bullet in development mode to help find N+1 queries (enable in config/environments/development.rb)
 * If you're using PostgreSQL, rake db:reset_sequences will fix any table autonumbers that are out of whack due to bulk data loading.     
 * "script/migrator":http://mediumexposure.com/scriptmigrator-for-navigating-migrations/ to quickly move the database to a specified migration.
+* rake db:size and rake db:tables:size
 
 h3. Deployment Tools
 

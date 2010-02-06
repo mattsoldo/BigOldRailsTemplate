@@ -41,7 +41,7 @@ file "script/migrator", load_pattern("script/migrator")
 in_root do
   run 'chmod +x script/migrator'
 end
-         
+
 commit_state "added script files"
 
 # environment updates
@@ -125,7 +125,7 @@ flash_class =  load_snippet('flash_class', design)
 file 'app/views/layouts/_flashes.html.erb', load_pattern('app/views/layouts/_flashes.html.erb', 'default', binding)
 
 footer_class = load_snippet('footer_class', design)
-  
+
 jquery_lint_tag = ''
 if javascript_library == 'jquery'
   jquery_lint_tag = load_snippet('jquery_lint_tag', 'jquery')
@@ -138,6 +138,8 @@ if mail_in_development == "inaction_mailer"
 end
 # rakefile for use with annotate
 rakefile 'annotate.rake', load_pattern('lib/tasks/annotate.rake')
+# rakefile for database sizes
+rakefile 'datasize.rake', load_pattern('lib/tasks/datasize.rake')
 # rakefile for use with postgresql
 if database == "postgresql"
   rakefile 'postgres.rake', load_pattern('lib/tasks/postgres.rake')
@@ -208,12 +210,12 @@ commit_state "stylesheets"
 
 if javascript_library == 'jquery'
   download('http://code.jquery.com/jquery-1.4.js', 'public/javascripts/jquery-1.4.js')
-  download('http://jqueryui.com/download/jquery-ui-1.7.2.custom.zip', 'public/javascripts/jquery-ui-1.7.2.custom.zip') 
+  download('http://jqueryui.com/download/jquery-ui-1.7.2.custom.zip', 'public/javascripts/jquery-ui-1.7.2.custom.zip')
   # there's got to be an easier way...
   system('cd public/javascripts/ && unzip jquery-ui-1.7.2.custom.zip development-bundle/ui/jquery-ui-1.7.2.custom.js && mv development-bundle/ui/jquery-ui-1.7.2.custom.js jquery-ui-1.7.2.custom.js && rm jquery-ui-1.7.2.custom.zip && rm -Rf development-bundle && cd ../.. ')
-  
+
   file_from_repo "jamespadolsey", "jQuery-Lint", "master", "jquery.lint.js", "public/javascripts/jquery.lint.js"
-  
+
   commit_state "added jQuery"
 end
 
@@ -514,7 +516,7 @@ end
 
 # databases
 rake('db:create:all')
-rake('db:migrate')   
+rake('db:migrate')
 rake('db:schema:load', :env => 'test')
 # Would like to do this, but rake doesn't see the task yet
 # rake('parallel:prepare[4]')
