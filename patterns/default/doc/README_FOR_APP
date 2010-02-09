@@ -97,5 +97,9 @@ Testing Tools
 - test_benchmark to identify slow tests (in test environment only)
 - query-trace to locate source of queries in the log (development only - turn on via config/initializers/query_trace.rb)
 #{'- jQuery-Lint to keep your jQuery squeaky-clean' if javascript_library == 'jquery'}  
-* Methods to easily create Object Daddy collections (see test_helper.rb)    
-* rcov-plugin to easily run tests with rcov
+- Methods to easily create Object Daddy collections (see test_helper.rb)    
+- rcov-plugin to easily run tests with rcov
+                                                 
+Miscellaneous
+=============
+- rake doc:dnote creates an HTML page of tasks in the doc folder.

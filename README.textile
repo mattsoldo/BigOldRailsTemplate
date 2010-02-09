@@ -112,7 +112,8 @@ h3. Testing Tools
 h3. Miscellaneous
 
 * Code to encourage IE6 users to get a real browser is included on the home page by default. You can adjust this in the configuration.
-* The generated application is localization-ready, with all strings in an English locale by default.
+* The generated application is localization-ready, with all strings in an English locale by default.   
+* rake doc:dnote creates an HTML page of tasks in the doc folder.
 
 h3. Post-creation Hooks
 
