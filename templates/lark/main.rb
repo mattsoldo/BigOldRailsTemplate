@@ -69,13 +69,13 @@ if design == "bluetrip"
   inside('public/img') do
     run('mkdir icons')
   end
-  file_from_repo "mikecrittenden", "bluetrip-css-framework", "master", "css/ie.css", "public/stylesheets/ie.css"
-  file_from_repo "mikecrittenden", "bluetrip-css-framework", "master", "css/print.css", "public/stylesheets/print.css"
-  file_from_repo "mikecrittenden", "bluetrip-css-framework", "master", "css/screen.css", "public/stylesheets/screen.css"
-  file_from_repo "mikecrittenden", "bluetrip-css-framework", "master", "css/style.css", "public/stylesheets/style.css"
-  file_from_repo "mikecrittenden", "bluetrip-css-framework", "master", "img/grid.png", "public/img/grid.png"
+  file_from_repo "mikecrittenden", "bluetrip", "master", "css/ie.css", "public/stylesheets/ie.css"
+  file_from_repo "mikecrittenden", "bluetrip", "master", "css/print.css", "public/stylesheets/print.css"
+  file_from_repo "mikecrittenden", "bluetrip", "master", "css/screen.css", "public/stylesheets/screen.css"
+  file_from_repo "mikecrittenden", "bluetrip", "master", "css/style.css", "public/stylesheets/style.css"
+  file_from_repo "mikecrittenden", "bluetrip", "master", "img/grid.png", "public/img/grid.png"
   %w(cross doc email external feed im information key pdf tick visited xls).each do |icon|
-    file_from_repo "mikecrittenden", "bluetrip-css-framework", "master", "img/icons/#{icon}.png", "public/img/icons/#{icon}.png"
+    file_from_repo "mikecrittenden", "bluetrip", "master", "img/icons/#{icon}.png", "public/img/icons/#{icon}.png"
   end
 end
 
