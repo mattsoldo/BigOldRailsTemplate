@@ -66,6 +66,7 @@ h3. Coding Tools
 * "will-paginate":http://wiki.github.com/mislav/will_paginate for pagination
 * "annotate":http://github.com/ctran/annotate_models to annotate models, exemplars, and routes
 * "carmen":http://github.com/jim/carmen to handle state and country selects
+* rake doc:diagram tasks for use with "railroad":http://railroad.rubyforge.org/
 
 h3. Database Tools
 
