@@ -48,6 +48,9 @@ jammit:
 :health_monitor:
   :options:
     :version: >= 0.1.4
+query_trace:
+  :options:
+    :version: >= 0.1.1
 # Optional exception handling
 hoptoad_notifier:
   :options:
@@ -60,11 +63,6 @@ inaction_mailer:
     :lib: inaction_mailer/force_load
     :env: development
   :if: mail_in_development == "inaction_mailer"
-ffmike-query_trace:
-  :options:
-    :lib: query_trace
-    :source: http://gems.github.com
-    :env: development
 bullet:
   :options:
     :env: development
