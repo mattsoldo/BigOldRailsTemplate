@@ -5,8 +5,7 @@ TODO after installing:
 #{'- Set up new app at http://www.hoptoadapp.com/' if exception_handling == 'hoptoad'}
 #{'- Put the right API key in config/initializers/hoptoad.rb' if exception_handling == 'hoptoad'}
 #{'- Put the right API key in config/new_relic.yml' if monitoring == 'new_relic'}
-#{'- Put the right plugin ID in config/scout.yml' if monitoring == 'scout'}
-#{'- Install the scout agent gem on the production server (sudo gem install scout_agent)' if monitoring == 'scout'}
+#{'- Install the scout gem (sudo gem install scout) and the request-log-analyzer gem (sudo gem install request-log-analyzer) on the production server.' if monitoring == 'scout'}
 - Create public/favicon.ico
 - Put the production database password in config/database.yml
 - Put mail server information in mail.rb

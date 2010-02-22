@@ -54,10 +54,6 @@ new_relic:
   :options:
     :git: :git://github.com/newrelic/rpm.git
   :if: monitoring == "new_relic"
-scout_rails_instrumentation:
-  :options:
-    :git: :git://github.com/highgroove/scout_rails_instrumentation.git
-  :if: monitoring == "scout"
 
 # Optional exception handling
 exceptional:

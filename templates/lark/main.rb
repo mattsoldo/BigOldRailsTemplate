@@ -233,10 +233,6 @@ if monitoring == "new_relic"
   file 'config/newrelic.yml', load_pattern('config/newrelic.yml', 'default', binding)
 end
 
-if monitoring == "scout"
-  file 'config/scout.yml', load_pattern('config/scout.yml', 'default', binding)
-end
-
 # local monitoring
 generate(:health_monitor)
 
@@ -574,8 +570,7 @@ if monitoring == "new_relic"
   puts '  Put the right API key in config/new_relic.yml'
 end
 if monitoring == "scout"
-  puts '  Put the right plugin ID in config/scout.yml'
-  puts '  Install the scout agent gem on the production server (sudo gem install scout_agent)'
+  puts '  Install the scout gem (sudo gem install scout) and the request-log-analyzer gem (sudo gem install request-log-analyzer) on the production server.'
 end
 puts '  Create public/favicon.ico'
 puts '  Put the production database password in config/database.yml'
