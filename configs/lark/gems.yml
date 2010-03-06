@@ -10,7 +10,7 @@ searchlogic:
   :options:
     :lib: searchlogic
     :version: ~> 2.3
-matthuhiggins-foreigner:
+foreigner:
   :options:
     :lib: foreigner
 formtastic:
@@ -33,24 +33,24 @@ inherited_resources:
     :lib: inherited_resources
     :version: >= 0.9.0
   :if: controller_type == "inherited_resources"
-erubis:
-  :options:
-    :version: >= 2.6.5
+# erubis:
+#   :options:
+#     :version: >= 2.6.5
 paperclip:
   :options:
     :version: >= 2.3
-jammit:
-  :options:
-    :version: >= 0.3
+# jammit:
+#   :options:
+#     :version: >= 0.3
 :carmen:
   :options:
     :version: >= 0.1
-:health_monitor:
-  :options:
-    :version: >= 0.1.4
-query_trace:
-  :options:
-    :version: >= 0.1.1
+# :health_monitor:
+#   :options:
+#     :version: >= 0.1.4
+# query_trace:
+#   :options:
+#     :version: >= 0.1.1
 # Optional exception handling
 hoptoad_notifier:
   :options:
@@ -58,37 +58,37 @@ hoptoad_notifier:
   :if: exception_handling == "hoptoad"
 
 # development only
-inaction_mailer:
-  :options:
-    :lib: inaction_mailer/force_load
-    :env: development
-  :if: mail_in_development == "inaction_mailer"
-bullet:
-  :options:
-    :env: development
+# inaction_mailer:
+#   :options:
+#     :lib: inaction_mailer/force_load
+#     :env: development
+#   :if: mail_in_development == "inaction_mailer"
+# bullet:
+#   :options:
+#     :env: development
 annotate:
   :options:
     :lib: annotate
     :env: development
-rcov:
-  :options:
-    :env: development
-metric_fu:
-  :options:
-    :version: >= 1.3
-    :lib: metric_fu
-    :env: development
+# rcov:
+#   :options:
+#     :env: development
+# metric_fu:
+#   :options:
+#     :version: >= 1.3
+#     :lib: metric_fu
+#     :env: development
 
 # test only
 shoulda:
   :options:
     :lib: shoulda
     :env: test
-ffmike-test_benchmark:
-  :options:
-    :lib: test_benchmark
-    :source: http://gems.github.com
-    :env: test
+# ffmike-test_benchmark:
+#   :options:
+#     :lib: test_benchmark
+#     :source: http://gems.github.com
+#     :env: test
 webrat:
   :options:
     :env: test
@@ -102,12 +102,12 @@ mocha:
     :version: ">=0.9.7"
     :env: test
   :if: @mocking == "mocha"
-rcov:
-  :options:
-    :env: test
-metric_fu:
-  :options:
-    :version: >= 1.3
-    :lib: metric_fu
-    :env: test
+# rcov:
+#   :options:
+#     :env: test
+# metric_fu:
+#   :options:
+#     :version: >= 1.3
+#     :lib: metric_fu
+#     :env: test
 
